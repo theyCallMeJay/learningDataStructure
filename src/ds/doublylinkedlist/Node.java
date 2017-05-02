@@ -1,14 +1,10 @@
-package ds.circularLinkedList;
+package ds.doublylinkedlist;
 
 public class Node {
 	private int data;
-	private Node next = null;
+	private Node next;
+	private Node previous;
 	
-	
-	/*public Node() {
-		super();
-		// TODO Auto-generated constructor stub
-	}*/
 	public int getData() {
 		return data;
 	}
@@ -21,12 +17,16 @@ public class Node {
 	public void setNext(Node next) {
 		this.next = next;
 	}
+	public Node getPrevious() {
+		return previous;
+	}
+	public void setPrevious(Node previous) {
+		this.previous = previous;
+	}
+
 	@Override
 	public String toString() {
-		return "Node [data=" + data + "]";
+		return "Node [data=" + data + ", next=" + next + ", previous=" + previous + "]";
 	}
-	
-	
-	
-	
+
 }
