@@ -98,5 +98,28 @@ public class DoublyLinkedList {
 		
 	}
 	
+	//assume non-empty list
+	public boolean deleteKey(int key){
+		Node current = first;
+		
+		while (current.getData() != key) {
+			current = current.getNext();
+			if (current == null) {
+				return false;
+			}
+		}
+		
+		if (current == last) {
+			current.setPrevious(last);
+			current.getPrevious().setNext(null);
+			return true;
+		}else if (current == first && current.getNext() == null) {
+			first = null;
+			return true;
+		}else if (current == first && current.getNext() != null) {
+			first = current.getNext();
+		}
+	}
+	
 	
 }
