@@ -118,8 +118,34 @@ public class DoublyLinkedList {
 			return true;
 		}else if (current == first && current.getNext() != null) {
 			first = current.getNext();
+			current.getNext().setPrevious(null);
+			return true;
+		}else {
+			current.getNext().setPrevious(current.getPrevious());
+			current.getPrevious().setNext(current.getNext());
+			return true;
 		}
 	}
 	
+	public void displayForward(){
+		System.out.println("List(first-->last)");
+		Node current = first;
+		while (current != null) {
+			current.toString();
+			current = current.getNext();
+		}
+		System.out.println();
+	}
+	
+	public void displayBackward(){
+		System.out.println("List(last-->first)");
+		Node current = last;
+		while (current != null) {
+			current.toString();
+			current = current.getPrevious();
+		}
+		System.out.println();
+		
+	}
 	
 }
