@@ -3,8 +3,7 @@ package ds.singlyLinkedList;
 public class SinglyLinkedList {
 	
 	private NewNode first;
-	private NewNode last
-	;
+	private NewNode last;
 
 	public SinglyLinkedList() {
 		super();
@@ -32,15 +31,16 @@ public class SinglyLinkedList {
 	}
 	
 	public void insertLast(int data){
-		NewNode current = last;
+		NewNode current = first;
 		while(current.getNext() != null){
 			current = current.getNext();
 		}
 		
-		NewNode last = new NewNode(data, null);
+		NewNode inserted = new NewNode(data, null);
 		
 		//NewNode tempLast = current.getNext();
-		current.next = last;
+		//current.next = last;
+		current.next = inserted;
 		//tempLast = last;
 		//current.next = last;
 		
